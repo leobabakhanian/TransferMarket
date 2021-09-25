@@ -2,11 +2,13 @@ const express = require('express')
 const app = express()
 const port = 3000
 const scrapers = require('./scrapers')
+const db = require('./db')
+const bodyParser = require('body-parser')
 
-app.use(express.json());
-app.use(express.urlencoded({
-  extended: true
-}));
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+app.use(bodyParser.json());
 
 app.use(function(req, res, next){
     res.header("Access-Control-Allow-Origin", "*");
@@ -15,21 +17,16 @@ app.use(function(req, res, next){
 })
 
 app.get('/players', async (req, res) => {
-    const players = [
-        {name: 'Erling Haaland', img: 'https://'},
-        {name: 'Kylian Mbappe', img: 'https://'},
-        {name: 'Lionel Messi', img: 'https://'},
-    ]
-    // get from db
+
+    const players = await db.getAllPlayers()
     res.send(players)
 })
 
 app.post('/players', async (req,res) => {
     console.log(req.body);
     const playerData = await scrapers.scrapePlayer(req.body.playerURL)
-    // scrape player
-    // add to db
-    res.send('success');
+    const players = await db.insertPlayer(playerData.name, playerData.imageURL, req.body.playerURL)
+    res.send(players)
 })
 
 app.listen(port, () => {
