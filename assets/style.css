@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.player-input{
+    margin-left: 20px;
+}
+
+.top-box{
+    text-align: center;
+    padding: 15px;
+    color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 3px;
+    box-shadow: 5px 5px 8px #00000020, -5px -5px 8px #ffffff;
+    border-width: 0 0 12px 0;
+    border-style: solid solid solid solid;
+    border-color: #094871;
+    background-color: #203454;
+    margin: 0 auto;
+}
+
+.top-box img{
+    width: 200px;
+    height: 100px;
+}
+
+.inputs input {
+    height: 30px;
+    width: 25%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.inputs button{
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 15px;
+    color: white;
+    background: #203454;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content{
+    display: flex;
+}
+
+.card{
+    margin: 5px;
+    padding: 20px;
+    border: 1px solid white;
+}
+
+h4{
+    font-family: "Montserrat", verdana;
+    padding: 20px;
+}

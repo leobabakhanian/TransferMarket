@@ -1,0 +1,68 @@
+<!-- Transfermarkt.com for web scraping -->
+<html>
+    <head>
+        <title>Transfer Market Value</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue">
+		<link rel="stylesheet" href="assets/style.css"/>
+		<link rel="shortcut icon" type="image/png" href="images/icon.png">
+    </head>
+    <body>
+        <div class="top-box">
+            <img src="images/logo.jpg">
+        </div>
+        <h4>Add a new player</h4>
+        <div class="inputs">
+            <input class="player-input" type="text" placeholder="Enter player URL" />
+            <button type="submit" onclick="submitPlayer()">Submit</button>
+        </div>
+        
+        <div class="content"></div>
+
+        <script>
+            function submitPlayer(){
+                const playerURL = document.querySelector('.player-input').value;
+                fetch('http://localhost:3000/players', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({playerURL})
+                })
+            }
+            
+            function newEl(type, attrs = {}){
+                const el = document.createElement(type);
+
+                for(let attr in attrs){
+                    const value = attrs[attr];
+                    if(attr == 'innerText') 
+                        el.innerText = value;
+                    else 
+                        el.setAttribute(attr,value);
+                }
+
+                return el;
+            }
+
+            async function loadPlayers(){
+                const res = await fetch('http://localhost:3000/players');
+                const players = await res.json();
+                const ctr = document.querySelector('.content');
+
+                players.forEach(player => {
+                    const card = newEl('div', {class: 'card'});
+                    const title = newEl('h4', {innerText: player.name});
+                    const img = newEl('img', {src: player.img});
+                    card.appendChild(title);
+                    card.appendChild(img);
+                    ctr.appendChild(card);
+                })
+            }
+
+            loadPlayers();
+        </script>
+    </body>
+</html>
