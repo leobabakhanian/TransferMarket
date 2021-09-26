@@ -55,21 +55,25 @@
                     const card = newEl('div', {class: 'card'});
                     const num = newEl('div', {class: 'num'});
                     const name = newEl('div', {class: 'name'})
+                    const country = newEl('div', {class: 'country'})
                     const image = newEl('div', {class: 'image'});
                     const club = newEl('div', {class: 'club'})
                     const value = newEl('div', {class: 'value'});
                     const extra = newEl('div', {class: 'extra'});
                     const shirtNum = newEl('h4', {innerText: player.shirtNum})
                     const title = newEl('h4', {innerText: player.name});
+                    const cntry = newEl('img', {src: player.country})
                     const img = newEl('img', {src: player.img});
                     const price = newEl('h4', {innerText: player.price});
                     num.appendChild(shirtNum);
                     name.appendChild(title);
+                    country.appendChild(cntry);
                     image.appendChild(img);
-                    price.innerHTML += "€";
+                    price.innerHTML += "m€";
                     value.appendChild(price);
                     card.appendChild(num);
                     card.appendChild(name);
+                    //card.appendChild(country);
                     card.appendChild(image);
                     card.appendChild(club);
                     card.appendChild(value);

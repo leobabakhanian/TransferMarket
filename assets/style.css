@@ -13,9 +13,13 @@ body{
     margin-left: 20px;
 }
 
+body h4{
+    padding-left: 20px;
+}
+
 .top-box{
     text-align: center;
-    padding: 15px;
+    padding: 5px 15px;
     color: #ffffff;
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 3px;
@@ -39,18 +43,17 @@ body{
     padding: 5px 10px;
     font-size: 16px;
     border: 1px solid gray;
-    border-radius: 5px;
     font-family: "Montserrat", verdana;
 }
 
 .inputs button{
     height: 30px;
-    padding: 5px 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 15px;
     color: white;
     background: #094871;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     font-family: "Montserrat", verdana;
 }
@@ -76,23 +79,35 @@ body{
 }
 
 .card .num{
-    margin-top: -10px;
+    margin: -10px 10px 0px -10px;
     width: 10%;
     float: left;
 }
 
 .card .name{
     margin-top: -10px;
-    width: 85%;
+    width: 70%;
+    float: left;
+}
+
+.card .country{
+    padding: 20px 0px 10px 10px;
+    height: 79px;
     float: right;
+}
+
+.card .country img{
+    width: 200%;
 }
 
 .card .num h4{
     font-size: 40px;
+    font-weight: 900;
 }
 
 .card .name h4{
     font-size: 40px;
+    font-weight: lighter;
 }
 
 .card .image{
@@ -109,6 +124,8 @@ body{
 .card .value{
     width: 70%;
     float: right;
+    padding-top: 30px;
+    padding-right: 10px;
 }
 
 .card .value h4{
