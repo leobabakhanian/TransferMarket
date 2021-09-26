@@ -1,10 +1,12 @@
 const typeorm = require("typeorm");
 
 class Player {
-    constructor(id, name, img, playerURL){
+    constructor(id, name, img, price, shirtNum, playerURL){
         this.id = id;
         this.name = name;
         this.img = img;
+        this.price = price;
+        this.shirtNum = shirtNum;
         this.playerURL = playerURL;
     }
 }
@@ -25,6 +27,12 @@ const PlayerSchema = new EntitySchema({
         },
         img: {
             type: "text"
+        },
+        price: {
+            type: "varchar"
+        },
+        shirtNum: {
+            type: "varchar"
         },
         playerURL: {
             type: "text"
@@ -56,11 +64,13 @@ async function getAllPlayers() {
     return players;
 }
 
-async function insertPlayer(name, img, playerURL){
+async function insertPlayer(name, img, price, shirtNum, playerURL){
     const connection = await getConnection();
     const player = new Player();
     player.name = name;
     player.img = img;
+    player.price = price;
+    player.shirtNum = shirtNum;
     player.playerURL = playerURL;
 
     const playerRepo = connection.getRepository(Player);

@@ -25,7 +25,7 @@ app.get('/players', async (req, res) => {
 app.post('/players', async (req,res) => {
     console.log(req.body);
     const playerData = await scrapers.scrapePlayer(req.body.playerURL)
-    const players = await db.insertPlayer(playerData.name, playerData.imageURL, req.body.playerURL)
+    const players = await db.insertPlayer(playerData.name, playerData.imageURL, playerData.price, playerData.shirtNum, req.body.playerURL)
     res.send(players)
 })
 

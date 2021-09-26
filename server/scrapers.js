@@ -14,9 +14,17 @@ async function scrapePlayer(url){
     const src = await el2.getProperty('src');
     const imageURL = await src.jsonValue();
 
+    const [el3] = await page.$x('/html/body/div[3]/div[8]/div/div/div[5]/a/text()');
+    const textPrice = await el3.getProperty('textContent');
+    const price = await textPrice.jsonValue();
+
+    const [el4] = await page.$x('/html/body/div[3]/div[8]/div/div/div[1]/div/div[1]/span');
+    const num = await el4.getProperty('textContent');
+    const shirtNum = await num.jsonValue();
+
     browser.close();
-    console.log({name, imageURL})
-    return {name, imageURL}
+    console.log({name, imageURL, price, shirtNum})
+    return {name, imageURL, price, shirtNum}
 }
 
 module.exports = {
