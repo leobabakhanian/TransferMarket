@@ -22,7 +22,7 @@ async function scrapePlayer(url){
     const [el4] = await page.$x('/html/body/div[3]/div[8]/div/div/div[1]/div/div[1]/span');
     const num = await el4.getProperty('textContent');
     const shirtNum = await num.jsonValue();
-
+    
     const [el5] = await page.$x('/html/body/div[3]/div[8]/div/div/div[4]/div[1]/a/img');
     const clImage = await el5.getProperty('src');
     const clubImage = await clImage.jsonValue();
@@ -35,10 +35,9 @@ async function scrapePlayer(url){
     const cntry = await el7.getProperty('src');
     const country = await cntry.jsonValue();
 
-
     browser.close();
-    console.log({name, imageURL, price, shirtNum, country, clubImage, clubName})
-    return {name, imageURL, price, shirtNum, country, clubImage, clubName}
+    console.log({name, imageURL, price, shirtNum})
+    return {name, imageURL, price, shirtNum}
 }
 
 module.exports = {

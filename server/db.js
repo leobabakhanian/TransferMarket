@@ -1,15 +1,15 @@
 const typeorm = require("typeorm");
 
 class Player {
-    constructor(id, name, img, price, shirtNum, country, clubImage, clubName, playerURL){
+    constructor(id, name, img, price, shirtNum){
         this.id = id;
         this.name = name;
         this.img = img;
         this.price = price;
         this.shirtNum = shirtNum;
-        this.country = country;
-        this.clubImage = clubImage;
-        this.clubName = clubName;
+        //this.country = country;
+        //this.clubImage = clubImage;
+        //this.clubName = clubName;
         this.playerURL = playerURL;
     }
 }
@@ -36,7 +36,7 @@ const PlayerSchema = new EntitySchema({
         },
         shirtNum: {
             type: "varchar"
-        },
+        },/*
         country: {
             type: "text"
         },
@@ -45,7 +45,7 @@ const PlayerSchema = new EntitySchema({
         },
         clubName: {
             type: "varchar"
-        },
+        },*/
         playerURL: {
             type: "text"
         }
@@ -76,16 +76,16 @@ async function getAllPlayers() {
     return players;
 }
 
-async function insertPlayer(name, img, price, shirtNum, country, clubImage, clubName, playerURL){
+async function insertPlayer(name, img, price, shirtNum, playerURL){
     const connection = await getConnection();
     const player = new Player();
     player.name = name;
     player.img = img;
     player.price = price;
     player.shirtNum = shirtNum;
-    player.country = country;
-    player.clubImage = clubImage;
-    player.clubName = clubName;
+    //player.country = country;
+    //player.clubImage = clubImage;
+    //player.clubName = clubName;
     player.playerURL = playerURL;
 
     const playerRepo = connection.getRepository(Player);
