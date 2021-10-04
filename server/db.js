@@ -1,7 +1,7 @@
 const typeorm = require("typeorm");
 
 class Player {
-    constructor(id, name, img, price, shirtNum){
+    constructor(id, name, img, price, shirtNum, playerURL){
         this.id = id;
         this.name = name;
         this.img = img;
