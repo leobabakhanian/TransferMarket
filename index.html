@@ -50,7 +50,7 @@
             }
 
             async function loadPlayers(){
-                const res = await fetch('http://localhost:3000/players');
+                const res = await fetch(url);
                 const players = await res.json();
                 const ctr = document.querySelector('.content');
 
