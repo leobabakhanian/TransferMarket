@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const scrapers = require('./scrapers');
-const db = require('./db');
+const scrapers = require('../app/scrapers');
+const db = require('../app/db');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({
