@@ -1,6 +1,5 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT;
+const express = require('express');
+const app = express();
 const scrapers = require('./scrapers');
 const db = require('./db');
 const bodyParser = require('body-parser');
@@ -29,6 +28,6 @@ app.post('/players', async (req,res) => {
     res.send(players);
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
 
 })

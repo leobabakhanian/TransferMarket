@@ -21,9 +21,12 @@
         <div class="content"></div>
 
         <script>
+            port = process.env.PORT;
+            url = 'http://localhost:' + port + '/players'; 
+
             function submitPlayer(){
                 const playerURL = document.querySelector('.player-input').value;
-                fetch('http://localhost:3000/players', {
+                fetch(url, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
