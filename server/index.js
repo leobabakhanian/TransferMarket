@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const scrapers = require('../app/scrapers');
-const db = require('../app/db');
+const scrapers = require('./scrapers');
+const db = require('./db');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({
@@ -28,6 +28,6 @@ app.post('/players', async (req,res) => {
     res.send(players);
 })
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(3000, () => {
 
 })

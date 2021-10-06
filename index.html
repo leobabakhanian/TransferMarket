@@ -21,8 +21,7 @@
         <div class="content"></div>
 
         <script>
-            port = 3000;
-            url = 'http://localhost:' + port + '/players'; 
+            const url = 'http://localhost:3000/players'; 
 
             function submitPlayer(){
                 const playerURL = document.querySelector('.player-input').value;
@@ -67,12 +66,12 @@
                     const title = newEl('h4', {innerText: player.name});
                     //const cntry = newEl('img', {src: player.country})
                     const img = newEl('img', {src: player.img});
-                    const price = newEl('h4', {innerText: player.price});
+                    const price = newEl('h4', {innerText: "€" + player.price});
                     num.appendChild(shirtNum);
                     name.appendChild(title);
                     //country.appendChild(cntry);
                     image.appendChild(img);
-                    price.innerHTML += "m€";
+                    price.innerHTML += "m";
                     value.appendChild(price);
                     card.appendChild(num);
                     card.appendChild(name);

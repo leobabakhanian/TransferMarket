@@ -123,9 +123,9 @@ body h4{
 
 .card .value{
     width: 70%;
-    float: right;
+    display: flex;
     padding-top: 30px;
-    padding-right: 10px;
+    margin-left: 300px;
 }
 
 .card .value h4{
