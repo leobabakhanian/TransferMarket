@@ -11,7 +11,7 @@ async function scrapePlayer(url){
     const name = await text.jsonValue();
 
     const [el2] = await page.$x('/html/body/div[3]/div[8]/div/div/div[3]/div/img');
-    ///html/body/div[3]/div[8]/div/div/div[4]/div/img
+    ///html/body/div[3]/div[8]/div/div/div[4]/div/img <-- used in new arrival transfers
     const src = await el2.getProperty('src');
     const imageURL = await src.jsonValue();
 
