@@ -14,16 +14,21 @@ This project requires NodeJS, NPM, and MySQL
   
 ## Installation
 
-Start with cloning this repo on your local machine:
+Start with cloning this repo on your local machine
 
 ```sh
 $ git clone https://github.com/leobabakhanian/TransferMarket.git
 $ cd TransferMarket
 ```
 
+then open the project and install all dependencies using
+```
+npm install
+```
+
 ## Usage
 
-Run the command
+Open the site and run the command
 
 ```sh
 node index.js
