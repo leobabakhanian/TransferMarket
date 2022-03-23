@@ -1,16 +1,17 @@
 # TransferMarket
-> A scraper for player data on transfermarkt.com
 
-## Dependencies
-
-This project requires NodeJS, NPM, and MySQL
+A scraper for player data on transfermarkt.com
 
 ## Table of Contents
 
 - [TransferMarket](#transfermarket)
-  - [Installation](#installation)
   - [Dependencies](#dependencies)
+  - [Installation](#installation)
   - [Using the scraper](#usage)
+
+## Dependencies
+
+This project requires NodeJS, NPM, and MySQL
   
 ## Installation
 
@@ -38,3 +39,5 @@ to start the server.
 
 
 To use the scraper, enter any player profile from https://transfermarkt.com and refresh the page.
+
+![alt text](https://github.com/leobabakhanian/TransferMarket/blob/master/images/transfermarket.jpg?raw=true)
